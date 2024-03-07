@@ -1,6 +1,7 @@
 import random
+import jogos
 
-def jogar_adivinhacao():
+def jogar_adivinhacaoGame():
     
         nivel = int(input("Escolha o nível de dificuldade (1-Fácio, 2-Médio, 3-Difícil: "))
         max_num = 10 if nivel == 1 else 50 if nivel == 2 else 100
@@ -23,9 +24,10 @@ def jogar_adivinhacao():
             maior = palpite > num_secreto
             menor = palpite < num_secreto
             
-            if acertou:
+            if acertou:ssss
                 print(f"Voce acertou e fez {pontos}) pontos!")
                 break 
+
             else:
                 pontos_perdidos = abs(num_secreto - palpite)
                 pontos -= pontos pontos_perdidos
@@ -37,6 +39,9 @@ def jogar_adivinhacao():
             if not acertou:
                 print(f"Suas tentativas acabaram. O número correto era {num_secreto}.")
             print("END GAME")
+
+    jogos.escolhe_game()
             
-if__name__ == "__main__":
-    jogar adivinhação()
+if (__name__ == "__main__"):
+
+    jogar_adivinhacaoGame()
