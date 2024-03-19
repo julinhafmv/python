@@ -1,0 +1,55 @@
+import random
+
+def definir_jogador(escolha_jogador, escolha_computador):
+    if escolha_jogador  == escolha_computador:
+            return "o resultado do jogo é: EMPATE!"
+    elif(
+        (escolha_jogador == "papel" and escolha_computador == "pedra") or
+        (escolha_jogador == "pedra" and escolha_computador == "tesoura") or
+        (escolha_jogador == "tesoura" and escolha_computador == "papel")
+    ):
+        return "Você GANHOU"
+        return "Voce tem {vitorias} vitorias"
+
+    else:
+        return "Você PERDEU"
+
+def jogar_jokenpo():
+    opcoes = ["pedra", "papel" , "tesoura"]
+    vitorias = 0 
+
+
+    print("Bem vindo ao jogo JOKENPO!")
+    print("Escolha entre: pedra, papel ou tesoura.")
+
+    while True: 
+        escolha_jogador = input("Faça sua escolha:")
+
+        if escolha_jogador not in opcoes:
+            print("Escolha inválida, tente novamente.")
+            continue 
+
+        escolha_computador = random.choice(opcoes)
+        print(f"A escolha do computador foi: {escolha_computador}")
+
+        resultado = definir_jogador(escolha_jogador,escolha_computador)
+        print(resultado)
+
+        if resultado == "Você GANHOU":
+            vitorias += 1
+        elif resultado == "Você PERDEU":
+            vitorias -= 1
+        else:
+            vitorias += 0
+        
+        print(f"O numero de vitoria é: {vitorias}")
+
+        jogar_novamente = input("Você quer jogar novamente (sim ou não)")
+        
+        if jogar_novamente != "sim":
+            break
+
+if __name__ == "__main__":
+    jogar_jokenpo()
+
+
